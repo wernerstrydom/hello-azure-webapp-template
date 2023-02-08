@@ -20,7 +20,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore ${{ env.SRC_PATH }}/Hello.sln
 
       - name: Build
         run: dotnet build ${{ env.SRC_PATH }}/Hello.sln --configuration Release --no-restore
